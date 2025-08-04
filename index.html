@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REAL DARK MARKET</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Jacquard+12&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1 class="jacquard-12-regular">THE REAL DARK MARKET</h1>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <ul class="product-list">
+                <li><button class="product-btn" onclick="openProduct('your-soul')">Your soul</button></li>
+                <li><button class="product-btn" onclick="openProduct('devil-contract')">Devil's contract</button></li>
+                <li><button class="product-btn" onclick="openProduct('eternal-night')">Eternal night</button></li>
+                <!-- Добавляйте новые товары сюда -->
+            </ul>
+        </aside>
+        <section class="product-window" id="product-window" style="display:none;">
+            <button class="close-btn" onclick="closeProduct()">&times;</button>
+            <div class="product-content" id="product-content">
+                <!-- Контент товара -->
+            </div>
+        </section>
+    </div>
+    <script>
+    function openProduct(product) {
+        document.getElementById('product-window').style.display = 'block';
+        const content = document.getElementById('product-content');
+        if (product === 'your-soul') {
+            content.innerHTML = `
+                <img src="84b20aa86ac627bbbf2362ad7d0a98e6.gif" alt="Your Soul" class="product-gif">
+                <div class="product-title">魂の取引 (Tamashii no Torihiki)</div>
+                <div class="product-price">九万九千九百九十九年の地獄<br>99999 years in Jigoku</div>
+                <div class="product-desc">
+                  Step into the crimson torii and offer your soul beneath the blood moon. The ancient yūrei (restless spirits) will guide you to the Yomi-no-Kuni, the Japanese underworld, where your essence will be weighed by the Enma-Ō himself.<br><br>
+                  In exchange, you will receive forbidden wisdom whispered by kitsune and tengu, and taste the sakura petals that bloom only in the realm of shadows.<br><br>
+                  <em>"The cherry blossoms fall, but the soul’s journey is eternal."</em>
+                </div>
+            `;
+        } else if (product === 'devil-contract') {
+            content.innerHTML = `
+                <img src="c206b2c536afacac4d85217c9ae8b40c.gif" alt="Devil's Contract" class="product-gif">
+                <div class="product-title">契約の書 (The Devil's Scroll)</div>
+                <div class="product-price">7 drops of your blood</div>
+                <div class="product-desc">
+                  Sign the ancient scroll, sealed since the Heian era, and gain the power to command shikigami—supernatural spirits from Japanese folklore. The contract is written in crimson ink and bound with a cursed seal. In exchange, your fate will be forever entwined with the yokai world. Beware: the more you command, the closer you become to an oni yourself.<br><br>
+                  <em>"The price of power is never paid in gold."</em>
+                </div>
+            `;
+        } else if (product === 'eternal-night') {
+            content.innerHTML = `
+                <img src="2dc52f2d51d086600bec09fbd951ec03.gif" alt="Eternal Night" class="product-gif">
+                <div class="product-title">永遠の夜 (Eternal Night)</div>
+                <div class="product-price">One heartbeat at midnight</div>
+                <div class="product-desc">
+                  Embrace the artifact that shrouds your world in endless night. See through the deepest darkness, but never again witness the dawn.<br><br>
+                  Legends say this relic was forged when two moons hung in the sky and the sun vanished for a thousand years. In the realm of eternal night, shadows come alive and time itself dissolves.<br><br>
+                  <em>“In darkness, all secrets are revealed—but some are better left unseen.”</em>
+                </div>
+            `;
+        } else {
+            content.innerHTML = '';
+        }
+    }
+    function closeProduct() {
+        document.getElementById('product-window').style.display = 'none';
+        document.getElementById('product-content').innerHTML = '';
+    }
+    </script>
+</body>
+    <div class="footer-telegram">TELEGRAM: @MATRIX99</div>
+</body>
+</html>
